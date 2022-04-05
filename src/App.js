@@ -109,7 +109,7 @@ function App() {
 
         <div>
             <h4>Time to pick a winner?</h4>
-            <button onClick={_pickWinner}>Enter</button>
+            <button onClick={_pickWinner}>Pick</button>
         </div>
 
         <hr/>
