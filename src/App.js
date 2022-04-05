@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div style={{margin:"5px 10px"}}>
-        <h2>Lottery Contact</h2>
+        <h2>Lottery Contract</h2>
         <p>Before clicking enter, make sure you are got Metamask extention installed in your PC & it is connected to this site</p>
         <p>This contact is managed by {state.manager}</p>
         <p>There are currently {state.players.length} people entered & completing to win {web3.utils.fromWei(state.balance,"ether")} ether</p>
