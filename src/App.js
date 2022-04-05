@@ -23,6 +23,8 @@ function App() {
               setState({...state, message: 'Waiting on transaction success...'});
               // get user account
               const accounts = await web3.eth.getAccounts();
+              console.log(accounts);
+
               const res = await lottery.methods.enter().send({
                   from: accounts[0],
                   value: web3.utils.toWei(value.toString(), 'ether')
@@ -34,6 +36,8 @@ function App() {
               setState({...state, message: e.message});
               console.log(e.message);
           }
+      }else{
+          setState({...state, message: 'Please enter an amount greater than 0.001 eth'});
       }
   }
 
@@ -81,6 +85,7 @@ function App() {
   return (
     <div style={{margin:"5px 10px"}}>
         <h2>Lottery Contact</h2>
+        <p>Before clicking enter, make sure you are got Metamask extention installed in your PC & it is connected to this site</p>
         <p>This contact is managed by {state.manager}</p>
         <p>There are currently {state.players.length} people entered & completing to win {web3.utils.fromWei(state.balance,"ether")} ether</p>
 
